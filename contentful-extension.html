@@ -7,12 +7,12 @@
         <h2>This is from my custom Contentful Extension!</h2>
         <script src="https://unpkg.com/contentful-ui-extensions-sdk@3"></script>
         <script>
-            document.addEventListener("DOMContentLoaded", function(){
+            //document.addEventListener("DOMContentLoaded", function(){
                 window.contentfulExtension.init(function(sdk) {
                     var value = sdk.field.getValue();
                     sdk.field.setValue("Hello world!");
                 });
-            });
+            //});
         </script>
     </body>
 </html>
