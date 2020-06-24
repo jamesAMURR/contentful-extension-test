@@ -4,14 +4,22 @@
         <meta charset="utf-8">
     </head>
     <body>
-        <h2 id="field1">This is from my custom Contentful Extension!</h2>
+        <input type="text" id="field1" name="field1"></h2>
         <script src="https://unpkg.com/contentful-ui-extensions-sdk@3"></script>
         <script>
             //document.addEventListener("DOMContentLoaded", function(){
+                var renderEntryUi = function(sdk){
+                    console.log("1");
+                    let query = ""
+                    sdk.space.getEntries(query);
+                }
                 window.contentfulExtension.init(function(sdk) {
-                    var value = sdk.field.getValue();
-                    sdk.field.setValue("Hello world!");
-                    document.getElementById("field1").innerHTML = sdk.field.getValue();
+                    if (sdk.location.is(locations.LOCATION_ENTRY_SIDEBAR)) {
+                        renderEntryUi(sdk)
+                    }
+                    //var value = sdk.field.getValue();
+                    //sdk.field.setValue("Hello world!");
+                    //document.getElementById("field1").innerHTML = sdk.field.getValue();
                 });
             //});
         </script>
