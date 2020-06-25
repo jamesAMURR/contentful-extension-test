@@ -2,5 +2,5 @@
   "id": "james-extension",
   "name": "Updates a field in a weird way.",
   "srcdoc": "contentful-extension.html",
-  "fieldTypes": ["Symbol", "Text"]
+  "fieldTypes": ["Symbol", "Text", "Array"]
 }
