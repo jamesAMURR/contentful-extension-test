@@ -9,21 +9,21 @@
         <script>
             console.log("0");
             //document.addEventListener("DOMContentLoaded", function(){
-                var renderEntryUi = function(sdk){
-                    console.log("1")
-                    let query = ""
-                    sdk.space.getEntries(query)
-                    console.log("2")
-                }
-                var getConditions = function(sdk){
-                    var entries = sdk.space.getEntries({content_type: 'Condition Content'})
-                    console.log(entries)
-                }
+//                 var renderEntryUi = function(sdk){
+//                     console.log("1")
+//                     let query = ""
+//                     sdk.space.getEntries(query)
+//                     console.log("2")
+//                 }
+//                 var getConditions = function(sdk){
+//                     var entries = sdk.space.getEntries({content_type: 'Condition Content'})
+//                     console.log(entries)
+//                 }
                 window.contentfulExtension.init(function(sdk) {
                     console.log("100")
                     if (sdk.location.is(locations.LOCATION_ENTRY_EDITOR)) {
                         console.log("101")
-                        renderEntryUi(sdk)
+                        //renderEntryUi(sdk)
                         console.log("102")
                     }
                     //var value = sdk.field.getValue();
