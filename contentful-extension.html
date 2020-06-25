@@ -7,15 +7,24 @@
         <input type="text" id="field1" name="field1"></h2>
         <script src="https://unpkg.com/contentful-ui-extensions-sdk@3"></script>
         <script>
+            console.log("0");
             //document.addEventListener("DOMContentLoaded", function(){
                 var renderEntryUi = function(sdk){
-                    console.log("1");
+                    console.log("1")
                     let query = ""
-                    sdk.space.getEntries(query);
+                    sdk.space.getEntries(query)
+                    console.log("2")
+                }
+                var getConditions = function(sdk){
+                    var entries = sdk.space.getEntries({content_type: 'Condition Content'})
+                    console.log(entries)
                 }
                 window.contentfulExtension.init(function(sdk) {
-                    if (sdk.location.is(locations.LOCATION_ENTRY_SIDEBAR)) {
+                    console.log("100")
+                    if (sdk.location.is(locations.LOCATION_ENTRY_EDITOR)) {
+                        console.log("101")
                         renderEntryUi(sdk)
+                        console.log("102")
                     }
                     //var value = sdk.field.getValue();
                     //sdk.field.setValue("Hello world!");
